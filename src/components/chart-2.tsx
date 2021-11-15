@@ -1,15 +1,13 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
 import {px} from '../shared/px';
-import {baseEchartOptions} from '../shared/base-echart-options';
 import {createEchartsOptions} from '../shared/create-echarts-options';
 
 export const Chart2 = () => {
     const divRef = useRef(null);
     useEffect(() => {
-        var myChart = echarts.init(divRef.current);
+        let myChart = echarts.init(divRef.current);
         myChart.setOption(createEchartsOptions({
-            ...baseEchartOptions,
             grid: {
                 x: px(100),
                 y: px(40),
